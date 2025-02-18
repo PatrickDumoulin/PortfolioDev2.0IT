@@ -1,0 +1,18 @@
+.app__footer {
+  width: 100%;
+  padding: 2rem;
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  .app__footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+      color: var(--lightGray-color);
+      margin: 0.5rem 0;
+    }
+  }
+}

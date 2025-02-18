@@ -1,0 +1,186 @@
+:root {
+  --font-base: "DM Sans", sans-serif;
+  
+  // Thème sombre moderne
+  --primary-color: #1a1a24; // Plus clair que #13131c
+  --secondary-color: #8A7FFF;
+  --black-color: #ffffff;
+  --lightGray-color: #e4e4e4;
+  --gray-color: #8892b0;
+  --brown-color: #46364a;
+  --white-color: rgba(255, 255, 255, 0.03);
+  --background-color: #1d1d2a; // Plus clair que #16161f
+  
+  // Gradients
+  --gradient-1: linear-gradient(135deg, rgba(138, 127, 255, 0.4) 0%, rgba(138, 127, 255, 0.2) 100%);
+  --gradient-2: linear-gradient(135deg, rgba(138, 127, 255, 0.6) 0%, rgba(138, 127, 255, 0.4) 100%);
+  
+  // Effets
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --card-border: 1px solid rgba(255, 255, 255, 0.05);
+  --card-background: rgba(255, 255, 255, 0.03);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--lightGray-color);
+}
+
+.app {
+  background-color: var(--background-color);
+  font-family: var(--font-base);
+}
+
+.app__whitebg {
+  background-color: var(--background-color);
+}
+
+.app__primarybg {
+  background-color: var(--primary-color);
+}
+
+.app__container {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.app__flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__wrapper {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  padding: 2rem 2rem;
+
+  @media screen and (max-width: 450px) {
+    padding: 2rem 1rem 2rem;
+  }
+}
+
+.copyright {
+  width: 100%;
+  padding: 2rem 0 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  p {
+    text-transform: uppercase;
+    color: var(--black-color);
+  }
+}
+
+.head-text {
+  font-size: 2.75rem;
+  font-weight: 800;
+  text-align: center;
+  color: #ffffff;
+  text-transform: capitalize;
+
+  span {
+    color: #8A7FFF;
+  }
+
+  span:not(.white-text) {
+    color: #8A7FFF;
+  }
+
+  @media screen and (min-width: 2000px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 2rem;
+  }
+}
+
+.p-text {
+  font-size: 0.9rem;
+  text-align: left;
+  color: var(--gray-color);
+  line-height: 1.5;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.75rem;
+  }
+}
+
+.bold-text {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--black-color);
+  text-align: left;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 0.9rem;
+  }
+}
+
+.app__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 1rem;
+
+  .app__navigation-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #cbcbcb;
+    margin: 0.5rem;
+
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--secondary-color);
+    }
+
+    @media screen and (min-width: 2000px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .app__navigation {
+    display: none;
+  }
+
+  .copyright {
+    padding: 2rem;
+  }
+}
+
+// Ajout d'un style global pour les scrollbars
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
+}
+
+// Effet de glassmorphism global
+.glass-effect {
+  background: var(--card-background);
+  backdrop-filter: blur(10px);
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+}
