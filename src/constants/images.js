@@ -42,6 +42,9 @@ import DALLE_Cloud from '../assets/DALLE_Cloud.png';
 import DALLE_Creative from '../assets/DALLE_Creative.png';
 import DALLE_Game from '../assets/DALLE_Game.png';
 import DALLE_Mobile from '../assets/DALLE_Mobile.png';
+import DALLE_Admin from '../assets/DALLE_Admin.png';
+import DALLE_Auto from '../assets/DALLE_Auto.png';
+import DALLE_Support from '../assets/DALLE_Support.png';
 
 import Maphoto from '../assets/Maphoto.jpg';
 
@@ -93,6 +96,9 @@ export default {
   DALLE_Cloud,
   DALLE_Creative,
   DALLE_Game,
+  DALLE_Admin,
+  DALLE_Auto,
+  DALLE_Support,
   Maphoto,
   DALLE_Mobile,
   spacegame,
@@ -101,4 +107,5 @@ export default {
   modernRecruit,
   AnimalSpecies,
   portfolio,
+  
 };

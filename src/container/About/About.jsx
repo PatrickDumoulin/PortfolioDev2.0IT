@@ -36,6 +36,18 @@ const translations = {
       creative: {
         title: "Creative Tools",
         description: "Proficient in various creative software tools for design, video editing, and 3D modeling. Experienced in creating engaging visual content and user interfaces."
+      },
+      sysadmin: {
+        title: "Systems & Network Administration",
+        description: "Experienced in managing and maintaining Windows Server and Linux environments, with expertise in Active Directory, virtualization, and network infrastructure. Strong focus on security and system optimization."
+      },
+      automation: {
+        title: "Automation & Scripting",
+        description: "Proficient in creating automated solutions using PowerShell, Bash, and Python for streamlined IT operations. Experienced in implementing CI/CD pipelines and infrastructure as code."
+      },
+      support: {
+        title: "IT Troubleshooting & Support",
+        description: "Skilled in diagnosing and resolving complex hardware and software issues. Experienced in network diagnostics, system performance analysis, and IT service desk management."
       }
     }
   },
@@ -69,12 +81,76 @@ const translations = {
       creative: {
         title: "Outils Créatifs",
         description: "Maîtrise de divers outils logiciels créatifs pour le design, l'édition vidéo et la modélisation 3D. Expérimenté dans la création de contenu visuel et d'interfaces utilisateur engageantes."
+      },
+      sysadmin: {
+        title: "Administration Systèmes & Réseaux",
+        description: "Expérimenté dans la gestion et maintenance des environnements Windows Server et Linux, avec expertise en Active Directory, virtualisation et infrastructure réseau. Accent particulier sur la sécurité et l'optimisation des systèmes."
+      },
+      automation: {
+        title: "Automatisation & Scripts",
+        description: "Compétent dans la création de solutions automatisées utilisant PowerShell, Bash et Python pour optimiser les opérations IT. Expérimenté dans l'implémentation de pipelines CI/CD et l'infrastructure as code."
+      },
+      support: {
+        title: "Dépannage & Support IT",
+        description: "Qualifié dans le diagnostic et la résolution de problèmes matériels et logiciels complexes. Expérimenté en diagnostic réseau, analyse de performance système et gestion de service desk IT."
       }
     }
   }
 };
 
 const abouts = [
+  {
+    key: "sysadmin",
+    skills: [
+      "Windows Server & Linux",
+      "Active Directory & GPO",
+      "VMware, VirtualBox",
+      "Docker, Kubernetes",
+      "TCP/IP, VLAN, DHCP, DNS",
+      "VPN, Wireshark",
+      "Firewall, Antivirus",
+      "MFA, SIEM"
+    ],
+    imgUrl: images.DALLE_Admin
+  },
+  {
+    key: "automation",
+    skills: [
+      "PowerShell",
+      "Bash",
+      "Ansible",
+      "Python",
+      "Jenkins",
+      "GitHub Actions",
+      "Azure DevOps",
+      "Infrastructure as Code"
+    ],
+    imgUrl: images.DALLE_Auto
+  },
+  {
+    key: "support",
+    skillsEN: [
+      "Hardware Troubleshooting",
+      "Software Diagnostics",
+      "Network Diagnostics",
+      "Performance Analysis",
+      "Service Desk Management",
+      "Wireshark",
+      "Log Analysis",
+      "IT Asset Management"
+    ],
+    skillsFR: [
+      "Dépannage Hardware",
+      "Diagnostic Logiciel",
+      "Diagnostic Réseau",
+      "Analyse de Performance",
+      "Gestion Service Desk",
+      "Wireshark",
+      "Analyse des Logs",
+      "Gestion des Actifs IT"
+    ],
+    imgUrl: images.DALLE_Support
+  },
   {
     key: "backend",
     skills: ["C#", "ASP.NET Core", "Entity Framework Core", "SQL Server, MySQL", "REST APIs", "Node.js"],
@@ -109,7 +185,8 @@ const abouts = [
     key: "creative",
     skills: ["Premiere Pro", "Photoshop", "After Effects", "Figma", "Blender", "Ableton Live", "Office 365"],
     imgUrl: images.DALLE_Creative
-  }
+  },
+  
 ];
 
 const About = () => {
@@ -140,17 +217,31 @@ const About = () => {
             </p>
             <div className="skills-container">
               <ul className="skills-list">
-                {about.skills.map((skill, skillIndex) => (
-                  <motion.li
-                    key={skillIndex}
-                    className="skill-item"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="skill-dot"></span>
-                    {skill}
-                  </motion.li>
-                ))}
+                {about.skills ? (
+                  about.skills.map((skill, skillIndex) => (
+                    <motion.li
+                      key={skillIndex}
+                      className="skill-item"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <span className="skill-dot"></span>
+                      {skill}
+                    </motion.li>
+                  ))
+                ) : (
+                  (language === 'FR' ? about.skillsFR : about.skillsEN).map((skill, skillIndex) => (
+                    <motion.li
+                      key={skillIndex}
+                      className="skill-item"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <span className="skill-dot"></span>
+                      {skill}
+                    </motion.li>
+                  ))
+                )}
               </ul>
             </div>
           </motion.div>

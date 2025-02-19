@@ -21,15 +21,21 @@ const translations = {
     title: "LANGUAGES & FRAMEWORKS",
     commits: "GITHUB COMMITS",
     projects: "FINISHED PROJECTS",
-    role: "FullStack Web Developer",
-    bio: "I'm Patrick, a passionate developer based in Québec City with a deep love for creating innovative applications and games. In addition, I'm a musician and enjoy exploring creative avenues like producing music professionally."
+    roles: {
+      tech: "IT Technician",
+      dev: "FullStack Web Developer"
+    },
+    bio: "I'm Patrick, an IT professional based in Québec City, specializing in technical support, system administration, and web development. With expertise in both hardware and software solutions, I combine technical troubleshooting skills with programming abilities to deliver comprehensive IT solutions. I'm also passionate about creating innovative applications and enjoy exploring creative technologies."
   },
   FR: {
     title: "LANGAGES & FRAMEWORKS",
     commits: "COMMITS GITHUB",
     projects: "PROJETS TERMINÉS",
-    role: "Développeur Web FullStack",
-    bio: "Je suis Patrick, un développeur passionné basé à Québec, avec un profond intérêt pour la création d'applications et de jeux innovants. De plus, je suis musicien et j'aime explorer des avenues créatives comme la production musicale professionnelle."
+    roles: {
+      tech: "Technicien Informatique",
+      dev: "Développeur Web FullStack"
+    },
+    bio: "Je suis Patrick, un professionnel de l'informatique basé à Québec, spécialisé en support technique, administration système et développement web. Combinant expertise en solutions matérielles et logicielles, j'allie compétences en dépannage technique et en programmation pour fournir des solutions informatiques complètes. Je suis également passionné par la création d'applications innovantes et j'aime explorer les nouvelles technologies."
   }
 };
 
@@ -85,7 +91,9 @@ const Header = () => {
               </div>
             </div>
             <div className="tag-cmp app__flex">
-              <p className="p-text">{translations[language].role}</p>
+              <p className="p-text">{translations[language].roles.tech}</p>
+              <div className="role-divider"></div>
+              <p className="p-text">{translations[language].roles.dev}</p>
             </div>
 
             <div className="profile-img">
