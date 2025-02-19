@@ -18,15 +18,20 @@ const Navbar = () => {
   };
 
   const getHref = (item) => {
-    const lowercaseItem = item.toLowerCase();
-    
+    // Créer un map de traduction pour les sections
     const sectionMap = {
+      // EN
       'home': 'home',
       'expertise': 'about',
       'work': 'work',
-      'experience': 'skills'
+      'experience': 'skills',
+      // FR
+      'accueil': 'home',
+      'projets': 'work',
+      'expérience': 'skills'
     };
 
+    const lowercaseItem = item.toLowerCase();
     const section = sectionMap[lowercaseItem];
     
     if (location.pathname !== '/') {
